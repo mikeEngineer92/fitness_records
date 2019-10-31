@@ -10,6 +10,27 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to("FitnessRecords", "/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("FitnessRecordsとは", "/about") %>
+        </li>
+        <li>
+          <%= link_to("記録一覧", "/records/index") %>
+        </li>
+        <li>
+          <%= link_to("新規記録", "/records/new") %>
+        </li>
+      </ul>
+    </header>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

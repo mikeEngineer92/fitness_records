@@ -1,0 +1,25 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    <%= form_tag("/records/#{@record.id}/update", {method: "patch"}) do %>
+      <div class="form">
+        <div class="form-body">
+          <% @record.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <p>種目名</p>
+          <input type="text" name="event" value="<%= @record.event %>">
+          <% @menus.each do |menu| %>
+            <p>重量（kg, 半角数字のみ）</p>
+            <input type="tel" name="weight" value="<%= menu.weight %>">
+            <p>rep数（半角数字のみ）</p>
+            <input type="tel" name="rep" value="<%= menu.rep %>">
+          <% end %>
+          <input type="submit" value="保存">
+        </div>
+      </div>
+    <% end %>
+</div>
+</div>

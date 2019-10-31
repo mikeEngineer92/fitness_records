@@ -1,0 +1,9 @@
+<div class="main posts-index">
+  <div class="container">
+    <% @records.each do |record| %>
+      <div class="posts-index-item">
+        <%= link_to(record.event, "/records/#{record.id}") %>
+      </div>
+    <% end %>
+  </div>
+</div>

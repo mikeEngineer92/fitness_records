@@ -1,0 +1,23 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">記録する</h1>
+    <%= form_tag("/records/create") do %>
+      <div class="form">
+        <div class="form-body">
+          <% @record.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <p>種目名</p>
+          <input type="text" name="event" value="<%= @record.event %>">
+          <p>重量（kg, 半角数字のみ）</p>
+          <input type="tel" name="weight" value="<%= @menus.weight %>">
+          <p>rep数（半角数字のみ）</p>
+          <input type="tel" name="rep" value="<%= @menus.rep %>">
+          <input type="submit" value="記録">
+        </div>
+      </div>
+    <% end %>
+</div>
+</div>

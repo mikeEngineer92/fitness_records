@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      exercise: トレーニング
+      menu: メニュー
+    attributes:
+      exercise:
+        event: 種目名
+      menu:
+        weight: 重量
+        rep: 回数
